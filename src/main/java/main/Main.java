@@ -1,16 +1,27 @@
 package main;
-import bank.BankAccount;
 
+import inventory.Product;
+import inventory.Inventory;
+import inventory.Warehouse;
 
 public class Main {
-   public static void main(String[] args) {
-       BankAccount account = new BankAccount();
-       account.accountNumber = 123456;
-       account.accountHolder = "John Doe";
-       account.balance = 1000.0;
+    public static void main(String[] args) {
+        Product product = new Product();
+        product.productId = 1001;
+        product.productName = "Laptop";
+        product.price = 1200.0;
 
-       System.out.println("Account Number: " + account.accountNumber);
-       System.out.println("Account holder: " + account.accountHolder);
-       System.out.println("Account balance: " + account.balance);
-   }
+        Inventory inventory = new Inventory();
+        inventory.product = product;
+        inventory.quantity = 5;
+
+        Warehouse warehouse = new Warehouse();
+        warehouse.warehouseId = 1;
+        warehouse.warehouseName = "Main Warehouse";
+        warehouse.inventories = "Placeholder";
+
+        System.out.println("Product ID: " + inventory.product.productId + ", Name: " + inventory.product.productName + ", Price: " + inventory.product.price);
+        System.out.println("Inventory Quantity: " + inventory.quantity);
+        System.out.println("Warehouse ID: " + warehouse.warehouseId + ", Name: " + warehouse.warehouseName);
+    }
 }
